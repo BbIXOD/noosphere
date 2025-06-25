@@ -7,10 +7,10 @@ if [ "NODE_ENV" = "development" ]; then
   done
   
   npx prisma migrate dev
-fi
-
-if [ "NODE_ENV" = "production" ]; then
+else 
   npx prisma migrate deploy
 fi
+
+npx prisma generate
 
 node dist/main
