@@ -3,7 +3,7 @@
 echo "Waiting for the database at db:5432..."
 for i in $(seq 1 5); do
   if nc -z db 5432; then
-    echo "Database is up! 🎉"
+    echo "Database is up"
     break
   fi
   echo "Still waiting ($i/5)..."
@@ -11,7 +11,7 @@ for i in $(seq 1 5); do
 done
 
 if ! nc -z db 5432; then
-  echo "Database never became available 😭"
+  echo "Database never became available"
   exit 1
 fi
 
