@@ -30,7 +30,7 @@ export class AuthService {
       },
     });
 
-    if (!user || await argon.verify(user.password, dto.password)) {
+    if (!user || !await argon.verify(user.password, dto.password)) {
       throw new ForbiddenException('Credentials do not match');
     }
 

@@ -17,6 +17,11 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    develop:
+      watch:
+        - path: .
+          action: rebuild
+          target: app
 
   studio:
     image: node:18-alpine
